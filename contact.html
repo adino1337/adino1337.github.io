@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrej Tejbus | Contact</title>
+    <link rel="icon" type="image/x-icon" href="images/icon.png">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/loadingScreen.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+    <script defer src="assets/js/scrollAnimations.js"></script>
+</head>
+<body>
+    <div class="loading" id="hideMeAfter5Seconds">
+        <div class="halfLoading left animation toTheLeft">
+            <h2>CON</h2>
+        </div>
+        <div class="halfLoading right animation toTheRight">
+            <h2>TACT</h2>
+        </div>        
+    </div> 
+    <div id="navOpen"><i class="fa-solid fa-bars"></i></div>
+    <nav id="nav">
+        <div id="navClose"><i class='fa-solid fa-x'></i></div>
+        <a href="index.html" class="icon nav-item-hidden" ><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a href="about.html" class="icon nav-item-hidden "><i class="fa-solid fa-user"></i><span>About me</span></a>
+        <a href="projects.html" class="icon nav-item-hidden"><i class="fa-sharp fa-solid fa-briefcase"></i><span>Projects</span></a>
+        <a href="contact.html" class="icon nav-item-hidden active-nav"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+    </nav>
+    
+    <header>
+        <h1>CONTACT</h1>
+        <h2>GET IN<span class="golden"> TOUCH</span></h2>
+    </header>
+    
+    <Main class="hidden">
+        <div class="info ">
+            <div>
+            <h3>DON'T BE SHY !</h3>
+            <p class="gray">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+        </div>
+            <div class="contacts">
+                <div class="contact">
+                    <div class="contactIcon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="text">
+                        <p>MAIL ME</p>
+                        <p>andrejado40@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="contactIcon"><i class="fa-solid fa-square-phone"></i></div>
+                    <div class="text">
+                        <p>CALL ME</p>
+                        <p>+421 907 182 028</p>
+                    </div>
+                </div>
+            </div>
+            <div class="icons">
+                <a href="https://github.com/adino1337" target="_blank" class="icon"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/andrej-tejbus-006bb427b/" target="_blank" class="icon"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/and.e.j/" target="_blank" class="icon"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+        
+            <form method="post" class="form" id="form">
+
+            <input type="checkbox" name="botcheck" style="display: none;">
+            <input type="hidden" name="access_key" value="a9f55cef-7338-461f-a84c-7becb89ebdf9">
+            <input type="hidden" name="from_name" value="Portfolio">
+
+            <div class="name">
+                <div class="inputBox">
+                    <input type="text" name="name" id="name" required>
+                    <span>YOUR NAME</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="email" id="email" required>
+                    <span>YOUR EMAIL</span>
+                </div>
+            </div>      
+            <div class="inputBox">      
+            <input type="text" name="subject" id="subject" required>
+            <span>YOUR SUBJECT</span>
+            </div>
+            <div class="inputBox">
+                <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+                <span class="textareas">YOUR MESSAGE</span>
+            </div>
+
+            <button type="submit" class="more" id="submitButton">
+                <span id="submitText">SEND MESSAGE</span>
+                <div class="icon" id="icon">
+                    <i class='fa-solid fa-paper-plane'></i>
+                </div>
+                <div id="result"></div>
+            </button>    
+        </form>
+        
+    </Main>
+      
+</body>
+<script src="assets/js/contactService.js"></script>
+<script src="assets/js/nav.js"></script>
+
+</html>

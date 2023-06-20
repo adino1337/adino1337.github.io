@@ -1,0 +1,129 @@
+::-webkit-scrollbar {
+    background-color: black;
+    width: 12px;
+    border-radius: 0;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 0;
+}
+
+.nav-item-hidden{
+    transform: translateX(100px);
+}
+.nav-item-show{
+    transform: translateX(0);
+}
+
+#nav .icon:nth-child(2){transition: transform 400ms ease 0ms;}
+#nav .icon:nth-child(3){transition: transform 400ms ease 200ms;}
+#nav .icon:nth-child(4){transition: transform 400ms ease 400ms;}
+#nav .icon:nth-child(5){transition: transform 400ms ease 600ms;}
+
+#navOpen{
+    width: 50px;
+    height: auto;
+    aspect-ratio: 1/1;
+    background-color: var(--navIconBG);
+    display: none;
+    place-items: center;
+    color: var(--secondary);
+    border-radius: 50%;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+#navClose{
+    width: 50px;
+    height: auto;
+    aspect-ratio: 1/1;
+    background-color: var(--navIconBG);
+    display: none;
+    place-items: center;
+    color: var(--secondary);
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+nav{
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    transform: translateY(-50%);
+    z-index: 500;
+}
+
+nav .icon{
+    width: 60px;
+    height: 60px;
+    background-color: var(--navIconBG);
+    display: grid;
+    place-items: center;
+    color: var(--secondary);
+    border-radius: 50%;
+    transition: background-color 250ms;
+    position: relative;
+}
+
+nav .icon:hover,
+nav .icon:focus{
+    background-color: var(--primary);
+    transition: 250ms;
+    border-radius: 0;
+}
+
+
+nav span{
+    bottom: 50%;
+    transform: translateY(50%);
+    right: -30px;
+    padding: 0;
+    position: absolute;
+    width: 100px;
+    transition: 500ms;
+    z-index: -1;
+    opacity: 0;
+    color: var(--secondary);
+}
+nav .icon:hover span,
+nav .icon:focus span{transform: translate(-80px,50%);opacity: 1;}
+
+.active-nav{
+    background-color: var(--primary) !important;
+}
+
+@media screen and (max-width: 1350px) {
+    nav{
+        background-color: var(--navIconBG);
+        height: 100vh;
+        right: 0;
+        justify-content: center;
+        width: 50%;
+        max-width: 200px;     
+        padding: 0 50px;  
+        display: none;         
+    }
+    nav span{
+        opacity: 1;
+        z-index: 2;
+        left: 100%;
+        padding-left: 30px;
+    }
+    #navOpen{
+        display: grid;
+    }
+    #navClose{
+        display: grid;
+    }
+    nav .icon:hover span,
+    nav .icon:focus span{
+        transform: translate(0px,50%);
+    }
+}

@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    --bg: #101010;
+    --primary: goldenrod;
+    --secondary: aliceblue;
+    --navIconBG: #1a1a1a;    
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);    
+    overflow-x: hidden;
+}
+.halfLoading h2{
+    padding: 0 2px !important;
+}
+
+header{
+    text-align: center;
+    position: relative;
+}
+
+header h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    font-size: 600%;
+    z-index: -1;
+    color: var(--navIconBG);
+}
+
+header h2{
+    color: var(--secondary);
+    z-index: 2;
+    font-size: 300%;
+}
+
+.golden{
+    color: var(--primary) !important;
+}
+
+Main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: calc(100vh - 58px - 80px);
+}
+Main a{
+    margin: 25px 0;
+    text-decoration: none;
+    color: gray;  
+    position: relative;  
+}
+
+Main a span{
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transition: 200ms;
+    background-color: gray;
+}
+
+Main a:hover span{
+    bottom: -7px;
+}
+
+Main .hidden-link {
+    opacity: 0;
+    transition-duration: 1s;
+    transition-delay: 0;
+}
+Main .show{
+    opacity: 1;
+}
+.projects{
+    display: grid;
+    grid-template-rows: repeat(5,1fr);
+    grid-template-columns: repeat(2, 1fr);
+    width: 70%;
+    grid-gap: 10px;    
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+.projects .project{
+    height: auto;
+    transition-duration: 400ms;
+    opacity: 0;
+    display: flex;
+    align-items: flex-end;
+    filter: blur(5px);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.projects .show{
+    transform: scale(1,1) !important;
+    opacity: 1;
+    filter: blur(0px);
+}
+
+
+.projects .project:nth-child(1){
+    background-image: url('../../images/ZenitCloud.png');
+    max-width: 400px;
+    width: 85%;
+    aspect-ratio: 3/2;
+    background-color: var(--bg);
+    justify-self: end;
+    align-self: flex-end;
+    grid-row: 1 / span 2;
+    grid-column: 1;
+    transform: scale(1,0);
+    transform-origin: bottom;
+}
+.projects .project:nth-child(2){
+    background-image: url('../../images/Bazar.png');
+    max-width: 500px;
+    width: 100%;
+    aspect-ratio: 3/2;
+    background-color: var(--bg);
+    justify-self: start;
+    align-self: flex-end;
+    grid-row: 1 / span 3;
+    grid-column: 2;
+    transform: scale(0,1);
+    transition-delay: 300ms;
+    transform-origin: left;
+}
+.projects .project:nth-child(3){
+    background-image: url('../../images/IOT.png');
+    max-width: 500px;
+    width: 100%;
+    aspect-ratio: 3/2;
+    background-color: var(--bg);
+    justify-self: end;
+    align-self: flex-start;
+    grid-row: 3 / span 3;
+    grid-column: 1;
+    transform: scale(0,1);
+    transition-delay: 900ms;
+    transform-origin: right;
+}
+.projects .project:nth-child(4){
+    background-image: url('../../images/MazdaCopy.PNG');
+    max-width: 400px;
+    width: 85%;
+    aspect-ratio: 3/2;
+    background-color: var(--bg);
+    grid-row: 4 / span 2;
+    grid-column: 2;
+    transform: scale(1,0);
+    transition-delay: 600ms;
+    transform-origin: top;
+}
+
+.cardText{
+    background-color: rgba(10, 10,10, 0.7);
+    width: calc(100% - 40px);
+    height: fit-content;
+    padding: 20px;
+    box-shadow: 0px -5px 25px 25px rgba(10,10,10,0.7); 
+    transform: translateY(calc(100% - 90px)); /*55%*/
+    transition: 1s;
+}
+
+.project .showCard{
+    transform: translateY(0);
+}
+
+.cardText h3{
+    margin: 0;
+    font-size: 32px;
+    color: var(--secondary);
+    position: relative;
+}
+
+.cardText h3::after{
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 3px;
+    background-color: var(--secondary);
+    left: 0;
+    bottom: -18px;
+}
+
+.cardText p{
+    margin-top: 40px;
+    color: lightgray;
+    max-width: 350px;
+}
+
+.cardText a{
+    color: lightgray;
+}
+
+@media screen and (max-width: 1050px) {
+    .projects{
+        display: flex;
+        grid-gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
+    .project{
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 3/2 !important;
+        transition-delay: 200ms !important;
+        transition-duration: 500ms !important;
+    }   
+    Main a{
+        margin-top: 0;
+        margin-bottom: 50px;
+    } 
+}
+
+@media screen and (max-width: 450px) {
+    .cardText{
+        transform: translateY(calc(100% - 80px)); /*55%*/
+    }
+    .cardText h3{
+        font-size: 24px;
+    }
+    .cardText p,
+    .cardText a{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .cardText{
+        transform: translateY(calc(100% - 50px)); /*55%*/
+        width: calc(100% - 20px);
+        padding: 10px;
+    }
+    .cardText h3{
+        font-size: 18px;
+    }
+    .cardText h3::after{
+        bottom: -10px;
+    }
+    .cardText p{
+        font-size: 12px;
+        margin-top: 20px;
+    }
+    .cardText a{
+        font-size: 12px;
+    }
+}
