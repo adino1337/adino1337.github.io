@@ -25,3 +25,13 @@ setTimeout(() => {
             icon.classList.add("nav-item-show")
     })    
 }, 2500);
+
+const footerDiv = document.createElement('div')
+footerDiv.textContent = "Naposledy aktualizované v roku 2023"
+
+footerDiv.style.textAlign = "center"
+footerDiv.style.margin = "20px 0"
+footerDiv.style.fontSize = "14px"
+footerDiv.style.color = "#555" 
+
+document.body.appendChild(footerDiv)
